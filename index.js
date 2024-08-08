@@ -10,7 +10,7 @@ for(var i = 0;i<numberOfDrumButton;i++){
     //detection keyBOARD press
     document.addEventListener("keydown",function(event){
         makeSound(event.key);
-        animation(key);
+        animation(event.key);
     });
 //make sound;
     function makeSound(key){
