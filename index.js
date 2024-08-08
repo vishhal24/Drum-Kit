@@ -4,12 +4,15 @@ for(var i = 0;i<numberOfDrumButton;i++){
     document.querySelectorAll(".drum")[i].addEventListener("click",function(){
        var buttonInnerHTML=this.innerHTML;
         makeSound(buttonInnerHTML);
+        animation(buttonInnerHTML);
     });
 }
     //detection keyBOARD press
     document.addEventListener("keydown",function(event){
         makeSound(event.key);
+        animation(key);
     });
+//make sound;
     function makeSound(key){
              switch(key){
             case "w":
@@ -42,4 +45,12 @@ for(var i = 0;i<numberOfDrumButton;i++){
                 break;                   
         }
 
+}
+//to add animation;
+function animation(currentkey){
+    var activeButton=document.querSelector("." + currentkey);
+    activeButton.classList.add("pressed");
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+    },100);
 }
