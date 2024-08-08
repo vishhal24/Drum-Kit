@@ -48,7 +48,7 @@ for(var i = 0;i<numberOfDrumButton;i++){
 }
 //to add animation;
 function animation(currentkey){
-    var activeButton=document.querSelector("." + currentkey);
+    var activeButton=document.querySelector("." + currentkey);
     activeButton.classList.add("pressed");
     setTimeout(function(){
         activeButton.classList.remove("pressed");
